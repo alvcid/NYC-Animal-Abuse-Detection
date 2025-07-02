@@ -1,145 +1,145 @@
-# 🐕🐱 Análisis de Abuso Animal NYC - Modelo de Detección Crítica
+# 🐕🐱 NYC Animal Abuse Analysis - Critical Detection Model
 
-## 📋 Descripción del Proyecto
+## 📋 Project Description
 
-Este proyecto desarrolla un **sistema de detección de casos críticos de abuso animal** en Nueva York usando Machine Learning. El objetivo es identificar automáticamente casos de abuso severo (Tortured, Chained) para priorizar la respuesta de las autoridades.
+This project develops a **critical animal abuse case detection system** in New York using Machine Learning. The goal is to automatically identify severe abuse cases (Tortured, Chained) to prioritize authorities' response.
 
-## 🎯 Objetivo Principal
+## 🎯 Main Objective
 
-**Maximizar la detección de casos críticos de abuso animal** para salvar vidas, priorizando recall crítico sobre accuracy general.
+**Maximize critical animal abuse case detection** to save lives, prioritizing critical recall over general accuracy.
 
 ## 📊 Dataset
 
-- **Fuente**: NYC Animal Abuse Dataset
-- **Registros**: 89,816 casos de abuso animal
-- **Período**: Datos históricos de reportes de abuso
-- **Clases**: 7 tipos de abuso (Tortured, Chained, Neglected, etc.)
+- **Source**: NYC Animal Abuse Dataset
+- **Records**: 89,816 animal abuse cases
+- **Period**: Historical animal abuse reports data
+- **Classes**: 7 types of abuse (Tortured, Chained, Neglected, etc.)
 
-## 🚀 Evolución del Proyecto
+## 🚀 Project Evolution
 
-### 1. Modelo Original (7 clases)
+### 1. Original Model (7 classes)
 - **Accuracy**: 56.5%
-- **Casos críticos detectados**: 0
-- **Problema**: No detectaba casos críticos
+- **Critical cases detected**: 0
+- **Problem**: Failed to detect critical cases
 
-### 2. Modelo Binario Simple
+### 2. Simple Binary Model
 - **Accuracy**: 82.5%
-- **Casos críticos detectados**: 33 (1.1%)
-- **Problema**: Excelente accuracy general pero recall crítico muy bajo
+- **Critical cases detected**: 33 (1.1%)
+- **Problem**: Excellent general accuracy but very low critical recall
 
-### 3. Modelo Binario Balanceado
+### 3. Balanced Binary Model
 - **Accuracy**: 80.7%
-- **Casos críticos detectados**: 144 (4.6%)
-- **Mejora**: Mejor balance pero aún insuficiente
+- **Critical cases detected**: 144 (4.6%)
+- **Improvement**: Better balance but still insufficient
 
-### 4. 🏆 Modelo Súper Avanzado (FINAL)
+### 4. 🏆 Super Advanced Model (FINAL)
 - **Accuracy**: 52.0%
-- **Recall Crítico**: 50.0%
-- **Casos críticos detectados**: 1,548 de 3,099
-- **Impacto**: **¡1,548 animales salvables!**
+- **Critical Recall**: 50.0%
+- **Critical cases detected**: 1,548 out of 3,099
+- **Impact**: **1,548 saveable animals!**
 
-## 🔍 Análisis Profundo - Características Críticas Descubiertas
+## 🔍 Deep Analysis - Critical Characteristics Discovered
 
-### ⏰ Patrones Temporales
-- **Horas más críticas**: 2:00 AM (20.0% críticos), 5:00 AM (18.8%), Midnight (18.6%)
-- **Períodos críticos**: Madrugada (0:00-6:59)
-- **Estacionalidad**: Otoño y Verano (18.8% críticos)
+### ⏰ Temporal Patterns
+- **Most critical hours**: 2:00 AM (20.0% critical), 5:00 AM (18.8%), Midnight (18.6%)
+- **Critical periods**: Early morning (0:00-6:59)
+- **Seasonality**: Autumn and Summer (18.8% critical)
 
-### 🗺️ Patrones Geográficos
-- **Boroughs críticos**: Bronx (20.2% críticos), Brooklyn (18.0%)
-- **Ubicaciones críticas**: Park/Playground (30.0% críticos), Subway Station (22.5%), Street/Sidewalk (22.2%)
+### 🗺️ Geographic Patterns
+- **Critical boroughs**: Bronx (20.2% critical), Brooklyn (18.0%)
+- **Critical locations**: Park/Playground (30.0% critical), Subway Station (22.5%), Street/Sidewalk (22.2%)
 
-### 🎯 Interacciones Súper Críticas
-- **Bronx + Park**: Combinación más peligrosa
-- **Park + Madrugada**: Patrón crítico identificado
-- **Bronx + Madrugada**: Alta probabilidad de casos severos
+### 🎯 Super Critical Interactions
+- **Bronx + Park**: Most dangerous combination
+- **Park + Early morning**: Critical pattern identified
+- **Bronx + Early morning**: High probability of severe cases
 
-## 🛠️ Características del Modelo Final
+## 🛠️ Final Model Features
 
-### Características Temporales
+### Temporal Features
 - `Hour`, `DayOfWeek`, `Month`
 - `Is_Hour_2AM`, `Is_Hour_5AM`, `Is_Hour_Midnight`
-- `Is_Madrugada`
+- `Is_Madrugada` (Early morning)
 
-### Características Geográficas
+### Geographic Features
 - `Is_Bronx`, `Is_Brooklyn`
 - `Is_Park`, `Is_Subway`, `Is_Street`
 
-### Interacciones Críticas
+### Critical Interactions
 - `Bronx_Park`, `Park_Madrugada`, `Bronx_Madrugada`
 
-## 📈 Resultados Épicos
+## 📈 Epic Results
 
-| Métrica | Valor | Significado |
+| Metric | Value | Meaning |
 |---------|-------|-------------|
-| **Recall Crítico** | 50.0% | De cada 10 casos críticos, detectamos 5 |
-| **Casos Detectados** | 1,548 | Animales que pueden ser salvados |
-| **Mejora vs Original** | ∞% | De 0 a 1,548 casos detectados |
-| **F1-Score Crítico** | 26.4% | Balance entre precisión y recall |
+| **Critical Recall** | 50.0% | Out of every 10 critical cases, we detect 5 |
+| **Cases Detected** | 1,548 | Animals that can be saved |
+| **Improvement vs Original** | ∞% | From 0 to 1,548 cases detected |
+| **Critical F1-Score** | 26.4% | Balance between precision and recall |
 
-## 🏆 Características Más Importantes
+## 🏆 Most Important Features
 
-1. **Hour** (0.4383) - Las horas críticas fueron CLAVE
-2. **Month** (0.2884) - Estacionalidad crítica
-3. **DayOfWeek** (0.1938) - Patrones semanales
+1. **Hour** (0.4383) - Critical hours were KEY
+2. **Month** (0.2884) - Critical seasonality
+3. **DayOfWeek** (0.1938) - Weekly patterns
 
-## 🔧 Archivos del Proyecto
+## 🔧 Project Files
 
-### Modelos Evolutivos
-- `exploratory_analysis.py` - Análisis inicial del dataset
-- `binary_model.py` - Primer modelo binario
-- `balanced_binary_model.py` - Modelo balanceado
-- `super_model.py` - **Modelo final súper avanzado**
+### Evolutionary Models
+- `exploratory_analysis.py` - Initial dataset analysis
+- `binary_model.py` - First binary model
+- `balanced_binary_model.py` - Balanced model
+- `super_model.py` - **Final super advanced model**
 
-### Análisis Profundo
-- `deep_analysis.py` - Análisis exhaustivo de patrones críticos
-- `severity_classification.py` - Clasificación por severidad
+### Deep Analysis
+- `deep_analysis.py` - Exhaustive critical pattern analysis
+- `severity_classification.py` - Severity classification
 
-### Visualizaciones
-- `exploratory_analysis.png` - Análisis inicial
-- `balanced_binary_results.png` - Resultados balanceados
-- `deep_analysis_results.png` - Patrones críticos
-- `super_model_results.png` - **Resultados finales épicos**
+### Visualizations
+- `exploratory_analysis.png` - Initial analysis
+- `balanced_binary_results.png` - Balanced results
+- `deep_analysis_results.png` - Critical patterns
+- `super_model_results.png` - **Epic final results**
 
-## 🚀 Cómo Ejecutar
+## 🚀 How to Run
 
 ```bash
-# Modelo final súper avanzado
+# Final super advanced model
 python super_model.py
 
-# Análisis profundo de patrones
+# Deep pattern analysis
 python deep_analysis.py
 
-# Modelo balanceado
+# Balanced model
 python balanced_binary_model.py
 ```
 
-## 💡 Conclusiones Clave
+## 💡 Key Conclusions
 
-1. **Location Type fue la característica más crítica** - Parks (30% críticos) vs general (17.3%)
-2. **Patrones temporales súper importantes** - Madrugada es crítica
-3. **Interacciones geográfico-temporales** - Bronx+Park+Madrugada = máximo riesgo
-4. **Trade-off perfecto**: Sacrificar accuracy general por detección crítica máxima
+1. **Location Type was the most critical feature** - Parks (30% critical) vs general (17.3%)
+2. **Super important temporal patterns** - Early morning is critical
+3. **Geographic-temporal interactions** - Bronx+Park+Early morning = maximum risk
+4. **Perfect trade-off**: Sacrifice general accuracy for maximum critical detection
 
-## 🎯 Impacto Real
+## 🎯 Real Impact
 
-- **1,548 casos críticos detectables** = 1,548 vidas de animales salvables
-- **Sistema de alertas en tiempo real** implementable
-- **Priorización automática** para autoridades de NYC
-- **Respuesta rápida** para casos severos
+- **1,548 detectable critical cases** = 1,548 saveable animal lives
+- **Real-time alert system** implementable
+- **Automatic prioritization** for NYC authorities
+- **Fast response** for severe cases
 
-## 🏅 Logros del Proyecto
+## 🏅 Project Achievements
 
-✅ **Modelo evolutivo** - De 0 a 1,548 casos detectados  
-✅ **Análisis profundo** - Patrones críticos identificados  
-✅ **Características avanzadas** - Interacciones complejas modeladas  
-✅ **Sistema implementable** - Listo para producción  
-✅ **Impacto real** - Puede salvar vidas de animales  
+✅ **Evolutionary model** - From 0 to 1,548 cases detected  
+✅ **Deep analysis** - Critical patterns identified  
+✅ **Advanced features** - Complex interactions modeled  
+✅ **Implementable system** - Ready for production  
+✅ **Real impact** - Can save animal lives  
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
-**alvcid** - Análisis y modelado completo del sistema de detección crítica
+**alvcid** - Complete analysis and modeling of the critical detection system
 
 ---
 
-*"Un modelo que puede detectar 1,548 casos críticos vs 0 inicial - ¡Misión cumplida!"* 🎉 
+*"A model that can detect 1,548 critical cases vs 0 initial - Mission accomplished!"* 🎉 
